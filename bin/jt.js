@@ -27,7 +27,7 @@ process.argv = [
   scriptPath,
   ...args,
 ];
-process.env.JT_SCRIPT_DIR = dirname(scriptPath);
+process.env.JT_SCRIPT_DIR = scriptDir;
 
 register("./loader.js", {
   parentURL: import.meta.url,

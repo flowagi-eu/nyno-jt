@@ -5,6 +5,12 @@ import { transform } from "esbuild";
 
 const PROJECT_ROOT = process.env.JT_SCRIPT_DIR;
 const SOURCE_MAP_ROOT = resolve(PROJECT_ROOT, ".source-map");
+
+let ENABLE_SOURCEMAP = false;
+
+if (process.env.JT_ENABLE_SOURCEMAP !== undefined) {
+  ENABLE_SOURCEMAP = process.env.JT_ENABLE_SOURCEMAP === '1';
+}
 import { sep } from "node:path";
 
 const NODE_MODULES = `${sep}node_modules${sep}`;
@@ -98,11 +104,14 @@ if (!url.startsWith("file:")) {
    */
   void (async () => {
     try {
-      await mkdir(dirname(mapPath), {
-        recursive: true,
-      });
+      if(ENABLE_SOURCEMAP === true) {
 
-      await writeFile(mapPath, result.map, "utf8");
+	      await mkdir(dirname(mapPath), {
+		recursive: true,
+	      });
+
+	      await writeFile(mapPath, result.map, "utf8");
+      }
     } catch (error) {
       console.error(
         `tsrun: failed to write source map: ${mapPath}`,
