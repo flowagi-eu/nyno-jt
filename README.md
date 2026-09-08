@@ -42,7 +42,7 @@ greet(123); // runs normally
 
 * TypeScript syntax in Node.js
 * No strict typing rules
-* `.ts` / `.tsx` with ESM imports
+* `.jt` / `.ts` / `.tsx` with ESM imports
 * In-memory esbuild transpilation
 * `@CheckAtRuntime` for runtime type checking
 * Automatically loads .env from the script directory
