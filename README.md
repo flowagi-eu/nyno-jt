@@ -2,7 +2,7 @@
 
 # Run JavaScript/TypeScript without strict rules + runtime type checking for functions (using @CheckAtRuntime)
 
-jstf lets you use TypeScript syntax directly in Node.js without requiring types everywhere or enforcing a strict TypeScript workflow.
+jt lets you use TypeScript syntax directly in Node.js without requiring types everywhere or enforcing a strict TypeScript workflow.
 
 It transpiles `.ts` and `.tsx` files in memory using esbuild and otherwise behaves like normal Node.js.
 
@@ -52,14 +52,14 @@ greet(123); // runs normally
 ### Usage
 
 ```bash
-jstf server.ts arg1 arg2
+jt server.ts arg1 arg2
 ```
 
 ### Install
 
 ```bash
-git clone https://github.com/flowagi-eu/jstf
-cd jstf
+git clone https://github.com/flowagi-eu/jt
+cd jt
 npm install
 npm link
 ```

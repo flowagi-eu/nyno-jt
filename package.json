@@ -1,9 +1,9 @@
 {
-  "name": "jstf",
+  "name": "jt",
   "version": "1.0.0",
   "description": "",
   "bin": {
-    "jstf": "./bin/jstf.js"
+    "jt": "./bin/jt.js"
   },
   "dependencies": {
     "esbuild": "0.28.2",
