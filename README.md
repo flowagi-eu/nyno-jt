@@ -46,7 +46,7 @@ greet(123); // runs normally
 * In-memory esbuild transpilation
 * `@CheckAtRuntime` for runtime type checking
 * Automatically loads .env from the script directory
-* Source maps in `.source-map/`
+* Source maps in `.source-map/ (use env JT_ENABLE_SOURCEMAP=1)`
 * Normal Node.js `process.argv`
 
 ### Usage
