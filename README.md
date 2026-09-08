@@ -1,6 +1,6 @@
 #### Currently Experimental, for https://nyno.dev (v10, coming soon)
 
-# Run JavaScript/TypeScript without strict rules + runtime type checking for functions (using @CheckAtRuntime)
+# JT: Run JavaScript/TypeScript without strict rules + runtime type checking for functions (using @CheckAtRuntime)
 
 jt lets you use TypeScript syntax directly in Node.js without requiring types everywhere or enforcing a strict TypeScript workflow.
 
