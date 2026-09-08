@@ -52,7 +52,7 @@ greet(123); // runs normally
 ### Usage
 
 ```bash
-jt server.ts arg1 arg2
+jt server.jt arg1 arg2
 ```
 
 ### Install
