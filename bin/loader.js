@@ -3,7 +3,7 @@ import { dirname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { transform } from "esbuild";
 
-const PROJECT_ROOT = process.cwd();
+const PROJECT_ROOT = process.env.JT_SCRIPT_DIR;
 const SOURCE_MAP_ROOT = resolve(PROJECT_ROOT, ".source-map");
 import { sep } from "node:path";
 
@@ -27,8 +27,8 @@ if (!url.startsWith("file:")) {
   }
 
 
-
-  if (!/\.(ts|tsx)$/.test(filename)) {
+  // only allow certain extensions for security
+  if (!/\.(ts|jt|tsx)$/.test(filename)) {
     return nextLoad(url, context);
   }
 

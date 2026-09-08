@@ -27,6 +27,7 @@ process.argv = [
   scriptPath,
   ...args,
 ];
+process.env.JT_SCRIPT_DIR = dirname(scriptPath);
 
 register("./loader.js", {
   parentURL: import.meta.url,
@@ -34,19 +35,3 @@ register("./loader.js", {
 
 await import(pathToFileURL(scriptPath).href);
 
-/*
-#!/usr/bin/env node
-import { loadEnvFile } from "node:process";
-
-import { register } from "node:module";
-
-register("./loader.js", {
-  parentURL: import.meta.url,
-});
-
-const [script, ...args] = process.argv.slice(2);
-
-process.argv = [process.argv[0], script, ...args];
-
-await import(new URL(script, `file://${process.cwd()}/`).href);
-*/
